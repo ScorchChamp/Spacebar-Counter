@@ -6,9 +6,15 @@ if (counterElement.textContent === undefined) {
 }
 
 
-
-
-document.getElementById("app").addEventListener("keypress", myFunction);
+document.addEventListener("click", event => {
+  if (event.clientX > document.body.offsetWidth*0.55) {
+    counterElement.textContent++;
+  } 
+  if (event.clientX < document.body.offsetWidth*0.45) {
+    counterElement.textContent--;
+  }
+  localStorage.setItem('counter', counterElement.textContent);
+});
 
 function myFunction(event) {
   if (event.code === 'Space' || event.code === 'Enter') {
@@ -20,9 +26,11 @@ function myFunction(event) {
   localStorage.setItem('counter', counterElement.textContent);
 }
 
-document.getElementById("reset").addEventListener("click", reset);
-
 function reset() {
-  localStorage.setItem('counter', 0);
   counterElement.textContent = 0;
+  localStorage.setItem('counter', counterElement.textContent);
 }
+
+
+document.getElementById("reset").addEventListener("click", reset);
+document.getElementById("app").addEventListener("keypress", myFunction);
