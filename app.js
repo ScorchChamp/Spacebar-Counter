@@ -5,29 +5,27 @@ if (counterElement.textContent === undefined) {
   localStorage.setItem('counter', 0);
 }
 
-
-document.addEventListener("click", event => {
-  if (event.clientX > document.body.offsetWidth*0.55) {
-    counterElement.textContent++;
-  } 
-  if (event.clientX < document.body.offsetWidth*0.45) {
-    counterElement.textContent--;
-  }
-  localStorage.setItem('counter', counterElement.textContent);
-});
-
 function myFunction(event) {
   if (event.code === 'Space' || event.code === 'Enter') {
-    counterElement.textContent++;
+    add();
   }
   if (event.code === 'KeyD') {
-    counterElement.textContent--;
+    minus();
   }
-  localStorage.setItem('counter', counterElement.textContent);
 }
 
 function reset() {
   counterElement.textContent = 0;
+  localStorage.setItem('counter', counterElement.textContent);
+}
+
+function minus() {
+  counterElement.textContent--;
+  localStorage.setItem('counter', counterElement.textContent);
+}
+
+function add() {
+  counterElement.textContent++;
   localStorage.setItem('counter', counterElement.textContent);
 }
 
