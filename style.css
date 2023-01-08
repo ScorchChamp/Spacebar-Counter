@@ -34,22 +34,23 @@
 }
 
 .left {
-    background-color: #888;
-    color: #999;
+    background-color: #f88;
+    color: #fff;
     flex: 1;
     margin-right: 10%;
     width: 45%; 
 }
 
 .right {
-    background-color: #ddd;
-    color: #eee;
+    background-color: #9f9;
+    color: #fff;
     flex: 1;
     width: 45%; 
 }
 
 .text {
     font-size: 250px;
+    text-align: center;
 }
 
 .info-container {

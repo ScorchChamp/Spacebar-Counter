@@ -6,10 +6,11 @@ if (counterElement.textContent === undefined) {
 }
 
 function myFunction(event) {
-  if (event.code === 'Space' || event.code === 'Enter') {
+  console.log(event)
+  if (event.code === 'Space' || event.code === 'Enter' || event.code === 'ArrowRight') {
     add();
   }
-  if (event.code === 'KeyD') {
+  if (event.code === 'KeyD' || event.code === 'ArrowLeft') {
     minus();
   }
 }
