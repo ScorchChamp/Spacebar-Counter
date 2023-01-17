@@ -1,3 +1,5 @@
+window.addEventListener("load", function () {
+
 const counterElement = document.getElementById('counter');
 counterElement.textContent = localStorage.getItem('counter');
 
@@ -33,3 +35,4 @@ function add() {
 
 document.getElementById("reset").addEventListener("click", reset);
 document.getElementById("app").addEventListener("keypress", myFunction);
+});
